@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+    <link rel="stylesheet" href = "styles.css">
+</head>
+<body class="page1-body">
+
+    <section id = contain class="container">
+    <div class = feedback>
+        <h1> Feedback Survey Form</h1>
+        <span>Thank you for shopping with us! Can you please fill out a quick survey describing how your experience with us was! FIll out the info for today's purchase and proceed to the next page!</span>
+        <hr>
+        <form id="feedbackForm">
+            <h4>First Name: </h4>
+            <input type="text" id="first-name" required placeholder="First Name Here:"> </input>
+
+            <h4>Last Name:</h4>
+            <input type="text" id="last-name" required placeholder="Last Name Here:"> </input>
+
+            <h4>Email:</h4>
+            <input type="email" id="email" required placeholder="Email Here:"> </input>
+
+            <h4>Reciept Number:</h4>
+            <input type="text" id="reciept-number" required placeholder="Rec. Number Here:"> </input>
+
+            <h4> Store Number:</h4>
+            <input type="text" id="store-number" required placeholder="Store Number Here:"> </input>
+
+            <button class="next-button" type="button" onclick="validateForm()"> Next Page</button>
+        </form>      
+        </div>
+    </section>
+    <script>
+
+        <!-- Defines a fucntion here called validateForm-->
+        function validateForm() {
+
+            /*declares a new variable called var and form is the name of the variable*/
+            var form = document.getElementById("feedbackForm");
+
+            /*the if statement checks if all of the fields inside of the form tag, have valid values, it is 
+            based on stuff like required, type, and returns true if it is, returns false otherwise*/
+            if (form.checkValidity()) {
+                location.href = 'page2.html';
+                /*if the form is valid, it will take us to the next page*/
+            } else {
+                alert("Please fill out all required fields.");
+                /*if the form isn't valid, then it will display a message asking the user to fill out the important details missing*/
+            }
+        }
+        </script>
+</body>
+</html>
